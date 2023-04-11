@@ -6,7 +6,7 @@ App for creating gradient from 2 colors.
 
 ![App Screenshot](screenshots/1.jpg)
 
-![App Screenshot](https://github.com/webchillgames/screenshots/2.jpg)
+![App Screenshot](screenshots/2.jpg)
 
 ## Tech Stack
 
