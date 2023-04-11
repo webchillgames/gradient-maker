@@ -10,8 +10,8 @@ import { ref } from 'vue'
 export default {
   emits: ['change-colors'],
   setup() {
-    const first = ref(null)
-    const second = ref(null)
+    const first = ref('#008F7A')
+    const second = ref('#0089BA')
 
     return {
       first,

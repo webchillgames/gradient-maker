@@ -38,8 +38,8 @@ export default {
   setup() {
     const orientation = ref('to right top')
 
-    const first = ref(null)
-    const second = ref(null)
+    const first = ref('#008F7A')
+    const second = ref('#0089BA')
     const result = ref()
     const pageRef = ref()
 
