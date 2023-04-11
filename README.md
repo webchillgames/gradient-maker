@@ -4,7 +4,7 @@ App for creating gradient from 2 colors.
 
 ## Screenshots
 
-![App Screenshot](https://github.com/webchillgames/gradient-maker/tree/main/screenshots/1.jpg)
+![App Screenshot](screenshots/1.jpg)
 
 ![App Screenshot](https://github.com/webchillgames/screenshots/2.jpg)
 
