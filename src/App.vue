@@ -17,12 +17,14 @@
     >
       Generate
     </button>
-
-    <GResult
-      v-if="first && second && orientation"
-      :isRadial="orientation === 'circle'"
-      :result="result"
-    />
+    <section class="g-maker__result">
+      <h3>CSS code:</h3>
+      <GResult
+        v-if="orientation && result"
+        :isRadial="orientation === 'circle'"
+        :result="result"
+      />
+    </section>
   </div>
 </template>
 
@@ -52,7 +54,6 @@ export default {
       second.value = v.second
     }
 
-    // 5 цветов
     function changeBackground(c1, c2, o) {
       const colors = chroma.scale([c1, c2]).mode('lch').colors(6).toString()
 
@@ -100,6 +101,11 @@ export default {
   section {
     text-align: center;
     margin-top: 16px;
+  }
+
+  &__result {
+    margin-top: 50px;
+    text-align-last: left;
   }
 
   &__generate {

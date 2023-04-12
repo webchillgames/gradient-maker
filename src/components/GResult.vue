@@ -1,11 +1,13 @@
 <template>
-  <div class="g-result" @click="selectText">
-    <code>background-image: {{ result }}</code>
+  <div class="g-result">
+    <code ref="codeRef">background-image: {{ result }};</code>
 
+    <button type="button" @click="copy">{{ action }}</button>
   </div>
 </template>
 
 <script>
+import { ref } from 'vue'
 export default {
   props: {
     result: {
@@ -19,16 +21,27 @@ export default {
   },
 
   setup() {
-    async function selectText(e) {
+    const action = ref('Copy')
+    const codeRef = ref()
+
+    async function copy() {
+      let range = new Range()
+      range.setStart(codeRef.value, 0)
+      range.setEnd(codeRef.value, 1)
+      document.getSelection().addRange(range)
+
       try {
-        await navigator.clipboard.writeText(e.target.innerText)
+        navigator.clipboard.writeText(range)
+        action.value = 'Copied!'
       } catch (e) {
         console.log(e)
       }
     }
 
     return {
-      selectText
+      codeRef,
+      action,
+      copy
     }
   }
 }
@@ -41,5 +54,28 @@ export default {
   border-radius: 4px;
   margin: 30px 0;
   padding: 16px;
+
+  code {
+    display: block;
+    text-align: left;
+  }
+
+  button {
+    cursor: pointer;
+    margin-top: 16px;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    padding: 8px;
+    background-color: rgba(189, 189, 189, 0.5);
+
+    &:hover {
+      background-color: rgba(189, 189, 189, 0.6);
+    }
+
+    &:active {
+      background-color: rgba(189, 189, 189, 0.8);
+    }
+  }
 }
 </style>
