@@ -55,7 +55,7 @@ export default {
     }
 
     function changeBackground(c1, c2, o) {
-      const colors = chroma.scale([c1, c2]).mode('lch').colors(6).toString()
+      const colors = chroma.scale([c1, c2]).mode('lch').colors(6).join(', ')
 
       if (o !== 'circle') {
         result.value = `linear-gradient(${o}, ${colors})`
