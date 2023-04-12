@@ -2,6 +2,10 @@
 
 App for creating gradient from 2 colors.
 
+## Try it
+
+https://webchillgames.github.io/gradient-maker/
+
 ## Screenshots
 
 ![App Screenshot](screenshots/1.jpg)
