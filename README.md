@@ -30,15 +30,18 @@ Easy steps:
 
 Voila! You have nice gradient without “gray dead zone”.
 Thanks to the addition of several suitable colors.
+```
 
-Compare results!
+## Compare results
 
 CSS Gradient created by "Gradient maker"
+
 ![App Screenshot](screenshots/3.jpg)
 
 Simple CSS gradient
+
 ![App Screenshot](screenshots/4.jpg)
-```
+
 ## Tech Stack
 
 **Client:**  JavaScript, Vue
