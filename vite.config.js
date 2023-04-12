@@ -5,7 +5,7 @@ import vue from '@vitejs/plugin-vue'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  // publicPath: import.meta.env.BASE_URL === "production" ? "/gradient-maker/" : "/",
+  publicPath: import.meta.env.BASE_URL === "production" ? "/gradient-maker/" : "/",
   base: "/gradient-maker/",
   plugins: [vue()],
   resolve: {
