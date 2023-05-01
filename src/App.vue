@@ -3,7 +3,7 @@
     <h2>Create your own gradient</h2>
     <section>
       <h3>Choose orientation</h3>
-      <GOrientations @change-orientation="changeOrientation" />
+      <GOrientations @change-orientation="changeOrientation" :orientation="orientation" />
     </section>
     <section>
       <h3>Enter colors</h3>

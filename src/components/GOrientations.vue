@@ -1,7 +1,7 @@
 <template>
   <div class="g-maker__gradient-orientations">
     <div v-for="(v, i) in gOrientations" :key="i" class="g-maker__gradient-orientation">
-      <label :for="`orientation-${i + 1}`" :class="{ active: current === v.value }">
+      <label :for="`orientation-${i + 1}`" :class="{ active: orientation === v.value }">
         <svg width="24" height="24" :style="{ transform: v.deg && `rotate(${v.deg}deg)` }">
           <use v-if="v.value !== 'circle'" xlink:href="#arrow" />
           <use v-else xlink:href="#rotate" />
@@ -12,14 +12,14 @@
         type="radio"
         :id="`orientation-${i + 1}`"
         :value="v.value"
-        @input="changeOrientation(v.value)"
+        @input="$emit('change-orientation', v.value)"
       />
     </div>
   </div>
 </template>
 
 <script>
-import { ref } from 'vue'
+
 const gOrientations = [
   { value: 'to right top', deg: 130 },
   { value: 'to right', deg: 180 },
@@ -34,17 +34,16 @@ const gOrientations = [
 
 export default {
   emits: ['change-orientation'],
-  setup(_, ctx) {
-    const current = ref(null)
-
-    function changeOrientation(v) {
-      current.value = v
-      ctx.emit('change-orientation', v)
+  props: {
+    orientation: {
+      type: String,
+      required: true
     }
+  },
+  setup() {
+
     return {
-      current,
       gOrientations,
-      changeOrientation
     }
   }
 }

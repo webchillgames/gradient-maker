@@ -26,7 +26,7 @@ export default {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  
+
   input {
     margin: 16px;
     border-radius: 8px;
@@ -36,6 +36,12 @@ export default {
     padding: 8px;
     box-shadow: $shadow;
     display: flex;
+  }
+
+  &__color {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
   }
 
   @media (max-width: 480px) {

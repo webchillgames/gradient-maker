@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 export default {
   props: {
     result: {
@@ -20,9 +20,11 @@ export default {
     }
   },
 
-  setup() {
+  setup(props) {
     const action = ref('Copy')
     const codeRef = ref()
+
+    watch(() => props.result, () => {action.value = 'Copy'})
 
     async function copy() {
       let range = new Range()
