@@ -1,7 +1,6 @@
 <template>
   <div class="g-result">
     <code ref="codeRef">background-image: {{ result }};</code>
-
     <button type="button" @click="copy">{{ action }}</button>
   </div>
 </template>
